@@ -6,8 +6,8 @@ def index(request):
     entries = Entry.objects.all()
     return render(request, 'index.html', {'entries': entries})
 
-def entry_detail(request, entry_id):
-    entry = get_object_or_404(Entry, pk = entry_id)
+def entry_detail(request, entry_slug):
+    entry = get_object_or_404(Entry, slug = entry_slug)
     comments = entry.comment_set.all()
 
     if request.method == 'POST':

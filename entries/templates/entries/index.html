@@ -8,7 +8,7 @@
     <ul>
         {% for entry in entries %}
             <li>
-                <a href="{% url 'entry_detail' entry.id %}">{{ entry.title }}</a>
+                <a href="{% url 'entry_detail' entry.slug %}">{{ entry.title }}</a>
             </li>
         {% endfor %}
     </ul>
