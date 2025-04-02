@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>kafuca</title>
+</head>
+<body>
+    <h1>all entries</h1>
+    <ul>
+        {% for entry in entries %}
+            <li>
+                <a href="{% url 'entry_detail' entry.id %}">{{ entry.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

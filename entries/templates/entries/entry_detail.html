@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ entry.title }}</title>
+</head>
+<body>
+    <h1>{{ entry.title }}</h1>
+    <p>{{ entry.content }}</p>
+    <h2>comments</h2>
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment.content }} - {{ comment.created_at }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h3>new comment</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <textarea name="content"></textarea><br>
+        <button type="submit">make a comment</button>
+    </form>
+    
+    <a href="{% url 'index' %}">back</a>
+</body>
+</html>
