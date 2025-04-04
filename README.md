@@ -47,4 +47,4 @@ kafuca is a django-based project that simplifies workflows with efficient tools 
 
 ## license
 
-this project is licensed under the mit license - see the [license](license) file for details.
+this project is licensed under the mit license - see the [license](LICENSE) file for details.
