@@ -1,50 +1,32 @@
 # kafuca
 
-kafuca is a django-based project that simplifies workflows with efficient tools and automation.
+A small Django blog: publish entries and let visitors comment on them.
 
-## features
+## Features
 
-- user-friendly interface
-- modular and scalable design
-- cross-platform compatibility
+- Entries with automatic slug URLs (`/<slug>/`)
+- Comments on each entry
+- Admin interface for managing content
 
-## installation
+## Run locally
 
-1. clone the repository:
-    ```bash
-    git clone https://github.com/rinmz/kafuca.git
-    cd kafuca
-    ```
-2. create a virtual environment and activate it:
-    ```bash
-    python -m venv penv
-    source penv/bin/activate  # on windows use `penv\scripts\activate`
-    ```
-3. install the dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-4. apply the migrations:
-    ```bash
-    python manage.py migrate
-    ```
-5. run the development server:
-    ```bash
-    python manage.py runserver
-    ```
+```bash
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+```
 
-## usage
+Open http://127.0.0.1:8000/. Create entries at `/admin/`.
 
-1. open your web browser and go to `http://127.0.0.1:8000/`.
+## Configuration
 
-## contributing
+| Variable | Default | Purpose |
+|---|---|---|
+| `DJANGO_SECRET_KEY` | random per start | Set this in production |
+| `DJANGO_DEBUG` | `1` | Set to `0` in production |
 
-1. fork the repository.
-2. create a new branch (`git checkout -b feature-branch`).
-3. commit your changes (`git commit -m 'add some feature'`).
-4. push to the branch (`git push origin feature-branch`).
-5. open a pull request.
+## License
 
-## license
-
-this project is licensed under the mit license - see the [license](LICENSE) file for details.
+MIT
